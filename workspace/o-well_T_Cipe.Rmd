@@ -1,0 +1,14 @@
+---
+title: "o-well"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(pdftools)
+library(tidyverse)
+well_text <- pdf_text("/Users/traviscripe/Desktop/github/WSU_STATS419_2021/datasets/Well/Well-23.pdf") %>%
+  readr::read_lines()
+
+print(well_text)
+```
