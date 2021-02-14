@@ -1,0 +1,94 @@
+---
+title: "o-well"
+output: html_document
+---
+
+Hello
+
+This is my notebook for the data we were given along with the data and code I used to read it in.
+
+This data is looking at and describing the physical and chemical parameters of groundwater samples and the dissolved metals in the groundwater.
+
+It is pretty obvious that the location of the wells depending on the type of landscape and the location of the fault has a direct impact on what is in the water in the well.
+
+There is also a connection with the well and what is in the water. 
+
+Getting this program to fully work was a bit of a struggle. It took me quite a while to figure out how the data frames fully work but it was a nice challenge. Once I got the data read in I had a few issues with formatting but after messing around with it a bit I got it to be the format that I wanted it to be. 
+
+The second data set was kind of annoying to work with though since we had to work around the mean, median, etc, in between the wells so having to read in certain parts and connecting them seemed like more work than should've been needed. 
+
+This data is pretty important for the health of the people who are using this as drinking water. There are definately different precautions that need to be taken for each well to make it safe to drink so these data sets can help make it possible to drink the water. 
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(pdftools)
+library(tidyverse)
+well_text <- pdf_text("/Users/traviscripe/Desktop/github/WSU_STATS419_2021/datasets/Well/Well-23.pdf") %>%
+  readr::read_lines()
+stats1 <- well_text[363:387]
+stats2<- well_text[422:438]
+stats3<- well_text[443:447]
+stats4 <- well_text[452]
+
+revised_stats1 <- stats1[3:25] %>%
+  str_squish() %>%
+  str_replace_all(",", "")
+  check = strsplit(revised_stats1, split = " ")
+revised_stats2 <- stats2[1:17] %>%
+  str_squish() %>%
+  str_replace_all(",", "")
+  check2 = strsplit(revised_stats2, split = " ")
+revised_stats3 <- stats3[1:5] %>%
+  str_squish() %>%
+  str_replace_all(",", "")
+  check3 = strsplit(revised_stats3, split = " ")
+revised_stats4 <- stats4[1] %>%
+  str_squish() %>%
+  str_replace_all(",", "")
+  check4 = strsplit(revised_stats4, split = " ")
+
+stats_df1 <- plyr::ldply(check)
+stats_df2 <- plyr::ldply(check2)
+stats_df3 <- plyr::ldply(check3)
+stats_df4 <- plyr::ldply(check4)
+
+#total[1] <- NULL
+text_data <- read.table("/Users/traviscripe/Desktop/github/WSU_STATS419_2021/datasets/Well/wells-location.txt", sep = "|", header = TRUE, dec = ".")
+
+df1 <- data.frame(stats_df1)
+df1[1] <- NULL
+text_data[1] <- NULL
+colnames(df1) <- 1:15
+row.names(df1) <- 1 : 23
+df2 <- data.frame(stats_df2)
+df3 <- data.frame(stats_df3)
+df4 <- data.frame(stats_df4)
+alm_total <- rbind(df2, df3)
+total <- rbind(alm_total, df4)
+total$text_data <- text_data 
+total[1] <- NULL
+colnames(total) <- 1 : 20
+row.names(total) <- 1 : 23
+
+df1$text_data <- text_data 
+
+view(text_data)
+
+#view(df1)
+#view(total)
+
+fault <- c(2500, 2000, 500, 5600, 1400, 7000, 0, 1300, 6000, 1300, 500, 1000, 15000, 3000, 3000, 500, 600, 10000, 3000, 1000, 3000, 9000, 500)
+
+geology <- c("Sand, clay, gravel", "Granite", "Alkaline granite, syenite", "Alkaline granite, syenite", "Granite, Volcanic rock, breccia", "Volcanic rock, breccia", "Sand, clay, gravel", "Alkaline granite, syenite", "Sand, clay, gravel", "Volcanic rock, breccia", "Alkaline granite, syenite", "Granite", "Sand, clay, gravel", "Sand, clay, gravel", "Volcanic rock, breccia", "Alkaline granite, syenite", "Sand, clay, gravel", "Sand, clay, gravel", "Sand, clay, gravel", "Sand, clay, gravel", "Sand, clay, gravel", "Sand, clay, gravel", "Alkaline granite, syenite")
+
+df1 <- data.frame(df1, fault, geology)
+view(df1)
+total <- data.frame(total, fault, geology)
+view(total)
+
+my.list <- list(df1, total)
+
+saveRDS(my.list, file = "wells.rds")
+
+```
