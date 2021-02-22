@@ -20,7 +20,7 @@ The second data set was kind of annoying to work with though since we had to wor
 This data is pretty important for the health of the people who are using this as drinking water. There are definately different precautions that need to be taken for each well to make it safe to drink so these data sets can help make it possible to drink the water. 
 
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 library(pdftools)
 library(tidyverse)
@@ -90,5 +90,47 @@ view(total)
 my.list <- list(df1, total)
 
 saveRDS(my.list, file = "wells.rds")
+
+total;
+
+saveRDS(my.list, file = "saudi.txt")
+
+
+hi <- unlist(my.list)
+hi <- as.numeric(hi)
+
+hist(hi[1:345])
+boxplot(hi[1:345])
+plot(hi[1:345])
+
+print(hi[346:368])
+
+latitude <- hi[346:368]
+
+print("plots of latitude")
+hist(latitude)
+boxplot(latitude)
+plot(latitude)
+
+longitude <- hi[369:391]
+
+print("plots of longitude")
+hist(longitude)
+boxplot(longitude)
+plot(longitude)
+
+altitude <- hi[392:414]
+
+print("plots of altitude")
+hist(altitude)
+boxplot(altitude)
+plot(altitude)
+
+fault <- hi[415:437]
+
+print("plots of fault")
+hist(fault)
+boxplot(fault)
+plot(fault)
 
 ```
