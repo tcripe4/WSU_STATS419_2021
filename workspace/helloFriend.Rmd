@@ -1,0 +1,95 @@
+---
+title: "helloFriend"
+author: "Travis Cripe [travis_cripe]"
+date: "1/31/20 9:28pm"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+# Travis Cripe
+# 11519554
+# helloTravis
+# IMAGE with CAPTION
+# Who am I? Well I don’t think anyone truly ever knows who they are. Asking “Who are you” is asking for someone to give a definition of themselves and that isn’t enough to figure someone out. So, who am I? Well I am a 23 year old student at Washington State State University studying Software Engineering. I was born in Spokane Washington and lived there until I was 5 and then moved to Mill Creek Washington. I have lived in Mill Creek since I moved here. I went to Penny Creek Elementary School, Gateway Middle School, Henry M. Jackson High School, and now I’m in college. Growing up I played a ton of sports. I played soccer, baseball, football, and my favorite sport is BMX racing. BMX racing was my life for about 8 years, I loved it. I traveled across Washington to race, and went to Bend, Oregon for National races. I did it year round, I would train in my free time and look forward to the next race. My dad was my biggest supporter with my racing. Him and I would travel and sleep in the bed of his truck for a weekend. My Dad always was trying to help me improve and get me to be the best that I could. I started to race in elementary school and my last time ever racing would be in 8th grade. This will all make sense towards the end of saying Who I am. In 8th grade my Dad got very sick and ended up passing away my freshman year of high school. I never went to another race, I couldn’t. So how does this define who I am? Well, it doesn’t. After my Dad passed I went into a deeply depressed state but didn’t even know I was. All I knew was that I couldn’t feel anything, I didn’t know what happiness was, I didn’t know what it felt like to look forward to something. I had no emotion. I just accepted that was how life was. I accepted that life was something where you would wake up everyday not caring about yourself or others, for years. I didn’t question it. When you are so young and going through some of the most major years of your life you don’t have time to think about yourself. Well I didn’t, maybe I just didn’t care. I went through high school with a complete absence of being human. I would watch others laugh and seemingly enjoy stuff while there was nothing I could do, that would bring me joy. I lost friends to not wanting to go out of my house, even getting out of bed for school was the hardest thing. But that’s not the worst of it. Imagine feeling like you barely even have enough energy to get out of bed, then you go have to go to a school for 7 hours where people expect you to talk, expect you to contribute, expect you to get good grades, and expect you to smile. High School was draining, I barely remember it. There was never a time for me to even consider my mental health because I was drained 24/7, so that is why I thought life was just this lifeless, emotionless, and never ending cycle. Then I graduate High School and get accepted to WSU. That’s a good thing right? It should be a fresh start, I can make myself a new person, I can be whoever and whatever I want me to be. I had hope right there, but like every other time I had felt hope, I went right back into the dark abyss of where my existence laid. It was a never ending cycle and there was no where to go. In college it only got worse. I started to abuse alcohol to try to feel something, and it became a problem. Fast forward to the summer going into my Senior Year of college and I realized something wasn’t right with me. It took me until Freshman year of High School to going into my Senior year of college to realize I had severe depression and that’s how I have been living my life and the lack of every emotion was not right. 
+
+#So, if I was asked this question even 2 years ago I would have given you a completely different response because Depression was who I was. In the past year and 6 months since I started medication I have become a completely new person, although still not where I want to be. 
+
+#So who am I? Well I still don’t know. But, what I do know is that I may never know. I will keep growing, I will keep trying to better myself everyday, I will do my best to beat my brain at its own game and thats the way I can define who I am, but it is always changing. 
+#So, Where am I? Well, currently I am in a very good spot in life. I have been making drastic changes in my life to help myself and for the first time in forever I can see a future that could very well be worth living for, which is something I haven’t felt, well, maybe ever. I am at a turning point in my life. From here on out it is either I fail myself or I become everything that I can be. Last week I completely cut out alcohol from my life, and decided that I wanted to be better. I am in a situation where I could have a girlfriend in a couple months. I never had one since, well, forever since I couldn’t feel anything. It’s like I am a new person right now. I have a lot to look forward to. I am graduating, Gamestonk (Gamestock) has made me more money than I’ve ever seen in my life, I will be looking for a full time job soon, and eventually move out of my moms house for good. Where I am right now is happiness. I am currently happy about the person that I am, and what my future looks like and it is amazing to say that. 
+
+
+#Why am I where I am. Well, I feel like I covered that a bit already but I will go into more detail. The only reason I am here today is because I fell into the darkest depths of hell in my own mind for all of my senior year of college. It was terrible. Once I started my medication everything was changing. I was starting to feel stuff I had never felt and I had no clue how to handle that. The medication dug me 10 feet deeper before it got better. I fought like hell everyday. At points I truly gave up on myself, more times than I would like to admit but there was always a part of me that didn’t, even if I couldn’t see it at the time. The only reason I am where I am today is because of my friends. My friends were there for me, always. They were a huge support for me, even when it seemed like I didn’t want to be alive for weeks at a time. They always pushed me and wanted me to get better. 
+
+#Where do I want to go. I want to go to a lot places. There is so much I want to do in my life now. I want a family, a secure job, enough income where I am not worrying about putting food on the table. 
+
+#I honestly don’t know if this is what you were looking for and I got a little bit carried away with it, but what I put is all true for who I used to be, who I am now, and how I got here. 
+
+#I really cant figure out the picture part so I am sorry and its almost due
+
+
+```
+
+# Travis B Cripe
+
+## Grew up in western Washington.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+```{r}
+# Cntrl-Shift I
+
+education = function(who)
+  {
+  education = list();
+  education$who = who;
+  
+  education[["Software Engineering"]] = TRUE;
+  key = "nic";
+  education[[key]] = "awesome";
+  
+  # return(education);
+  education;
+  }
+
+
+```
+
+
+```{r}
+x = education("travis");
+str(x);
+
+x$who = "travis";
+x[["nic"]] = "totally";
+str(x);
+
+```
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

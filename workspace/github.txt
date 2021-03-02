@@ -1,0 +1,4 @@
+user|tcripe4
+repo|WSU_STATS419_2021
+example.functions|https://github.com/MonteShaffer/WSU_STATS419_FALL2020/blob/master/functions/functions-stats.R
+raw.functions|https://raw.githubusercontent.com/MonteShaffer/WSU_STATS419_FALL2020/master/functions/functions-stats.R

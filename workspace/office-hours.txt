@@ -1,0 +1,6 @@
+Tuesday-after-class|YES
+Thursday-after-class|NO
+Saturday|11:13
+Saturday|13:11
+Sunday|17-19
+Sunday|7-9
